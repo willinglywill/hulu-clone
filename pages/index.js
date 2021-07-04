@@ -6,7 +6,6 @@ import Results from '../components/Results.js';
 import requests from '../components/requests';
 
 export default function Home(props) {
-  console.log(props);
   return (
     <div>
       <Head>
@@ -27,7 +26,6 @@ export async function getServerSideProps(context) {
     requests[genre]?.url || requests.fetchTrending.url
   ).then((data) => data.json());
 
-  console.log(request);
   return {
     props: {
       result: request.results,
