@@ -24,7 +24,7 @@ export async function getServerSideProps(context) {
   const genre = context.query.genre;
 
   const request = await fetch(
-    requests[genre].url || requests.fetchTrending.url
+    requests[genre]?.url || requests.fetchTrending.url
   ).then((data) => data.json());
 
   console.log(request);
